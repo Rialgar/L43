@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--(X)HTML5 & CSS3 Polyglot Markup-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+	<head>
+        <title>Foreign Planet - LD43 - Rialgar</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                background-color: black;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: calc(100vw * 6 / 8);
+            }
+
+            #ui {
+                position: absolute;
+                top: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                width: 100vw;
+            }
+
+            #ui.down {
+                top: unset;
+                bottom: 0;
+            }
+
+            #ui td {
+                padding-left: 5vw;
+                padding-right: 5vw;
+                font-size: 2.5vw;
+            }
+
+            #dialog {
+                position: absolute;
+                top: 10vw;
+                left: 5vw;
+                width: 90vw;
+                height: calc(100vw * 6 / 8 - 20vw);
+                background-color: rgba(0,0,0,0.85);
+                color: white;
+                border: 1px solid white;
+                border-radius: 1vw;
+                padding: 2vw;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: 2vw;
+                display: none;
+            }
+
+            #dialogTitle {
+                font-size: 4vw;
+            }
+
+            #dialogText {
+                height: 80%;
+            }
+
+            #dialogButtons button {
+                font-size: 2vw;
+                background-color: gray;
+                border: 3px outset lightgray;
+                border-radius: 1vw;
+                height: 5vw;
+                width: 15vw;
+                margin-left: 1vw;
+                margin-right: 1vw;
+                cursor: pointer;
+            }
+
+            #dialogButtons button:hover {
+                background-color: lightgray;
+            }
+
+            #dialogButtons button:active {
+                background-color: gray;
+                border: 3px inset lightgray;
+            }
+
+            svg#board {
+                width: 100vw;
+                height: calc(100vw * 6 / 8);
+
+                fill: #222222;
+                stroke: black;
+                stroke-width: 5;
+
+                user-select: none;
+                -moz-user-select: none;
+            }
+            g.ship{
+                fill: white;
+            }
+            .highlight {
+                fill: none;
+                stroke: gold;
+            }
+            .highlight text{
+                fill: none;
+            }
+            .highlight.explore text{
+                fill: gold;
+            }
+            text {
+                stroke: none;
+                fill: black;
+                font-size: 32px;
+            }
+
+            .Plains {
+                fill: #f1a431;
+            }
+            .Rocks {
+                fill: #ddb274;
+            }
+            .Hills {
+                fill: #c8c1b7;
+            }
+            .Mountains {
+                fill: #b4cffa;
+            }
+
+        </style>
+        <script src="main.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <svg id="board" viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg">
+        </svg>
+        <table id="ui">
+            <tr>
+                <td>People</td>
+                <td>Food</td>
+                <td>Fuel</td>
+                <td>Carbon</td>
+                <td>Day</td>
+            </tr>
+            <tr>
+                <td id="people">0</td>
+                <td id="food">0</td>
+                <td id="fuel">0</td>
+                <td id="carbon">0</td>
+                <td id="day">0</td>
+            </tr>
+        </table>
+        <div id="dialog">
+            <div id="dialogTitle">This is the title.</div>
+            <div id="dialogText">This is the text.</div>
+            <div id="dialogButtons"><button>These</button><button>are</button><button>buttons</button></div>
+        </div>        
+    </body>
+</html>
