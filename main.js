@@ -34,7 +34,7 @@ const tileTypes = [
 
 const game = {
     people: 500,
-    food: 10000,
+    food: 8000,
     fuel: 5,
     carbon: 0,
     day: 0
@@ -279,7 +279,7 @@ const showResourceMenuCb = (from, to, factor) => () => {
 
 const showTileMenu = tile => {
     if(tile.type === 'ship'){
-        showMenu('Ship', 'This is your ship. You need 1000 fuel to fly back home. Cou can convert Carbon to Fuel or Food 1-to-1. You can convert food and fuel into each other 2-to-1.', [
+        showMenu('Ship', 'This is your ship. You need 1000 fuel to fly back home. Cou can convert Carbon to Fuel or Food 1-to-1. You can convert food and fuel into each other 10-to-1.', [
             {
                 text: 'Close',
                 callback: hideMenu
@@ -294,11 +294,11 @@ const showTileMenu = tile => {
             },
             {
                 text: 'Fuel 🡒 Food',
-                callback: showResourceMenuCb('fuel', 'food', 2)
+                callback: showResourceMenuCb('fuel', 'food', 10)
             },
             {
                 text: 'Food 🡒 Fuel',
-                callback: showResourceMenuCb('food', 'fuel', 2)
+                callback: showResourceMenuCb('food', 'fuel', 10)
             }
         ])
     } else if (tile.resources === 0) {
